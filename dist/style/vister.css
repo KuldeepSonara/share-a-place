@@ -1,0 +1,131 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Blurred Header Styling with Smooth Transition */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  backdrop-filter: blur(15px); /* Apply blur effect */
+  background: rgba(255, 255, 255, 0.33); /* Semi-transparent background */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.6s ease-out forwards; /* Animation for fade-in effect */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Header text animation */
+}
+
+header a {
+  background-color: #4285f4;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header a:hover {
+  background-color: #357ae8;
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Sticky Header with Scroll Animation */
+header.sticky {
+  background: rgba(255, 255, 255, 1); /* Fully opaque when scrolled */
+  backdrop-filter: blur(10px); /* Less blur on scroll */
+}
+
+/* Full-Screen Map */
+#map {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    height: 80px;
+    padding: 0 15px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  header a {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 70px;
+    padding: 0 10px;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  header a {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}

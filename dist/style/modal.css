@@ -1,0 +1,124 @@
+/* Backdrop Styles */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  backdrop-filter: blur(8px); /* Blur effect */
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8); /* Start slightly smaller */
+  width: 80%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  backdrop-filter: blur(4px); /* Slight blur inside the modal */
+  z-index: 99999999;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  overflow: hidden;
+  opacity: 0;
+  animation: modalFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.modal__content {
+  padding: 1.5rem;
+  text-align: center;
+  color: #333; /* Slightly darker text for better readability */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Close Button */
+.modal-close-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  background: #36007c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-close-button:hover {
+  background: #55007c;
+  transform: scale(1.05);
+}
+
+/* Spinner Animation */
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 1rem auto;
+  animation: pulseScale 1.2s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #36007c;
+  border-color: #36007c transparent #36007c transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+  .modal {
+    width: 40%;
+  }
+}
