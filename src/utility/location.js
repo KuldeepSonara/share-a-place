@@ -13,7 +13,7 @@ const updateMapAndCreateLink = (latitude, longitude, textContent) => {
   // const shareableLink = `https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=13/${latitude}/${longitude}`;
   
   const currentUrl = window.location.origin; 
-  const shareableLink = `${currentUrl}/dist/vister.html?lat=${latitude}&lon=${longitude}`;
+  const shareableLink = `${currentUrl}/dist/vister.html?lat=${latitude}&lon=${longitude}&name=${textContent}`;
 
   
   shareLinkInput.value = shareableLink;
