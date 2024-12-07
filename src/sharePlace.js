@@ -34,6 +34,11 @@ const locateUserHandler = () => {
       showFallbackMessage(
         "Location unavailable. Enable GPS or enter an address manually."
       );
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
     }
   );
 };
