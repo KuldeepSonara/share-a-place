@@ -20,6 +20,17 @@ const locateUserHandler = () => {
 
   showLoader("Loading map...");
 
+  const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isArc = /Arc/i.test(navigator.userAgent);
+
+  if (isIphone && isArc) {
+    showFallbackMessage(
+      "Location feature is not supported in Arc browser on iPhone. Please use a different browser or manually enter an address."
+    );
+    hideLoader();
+    return;
+  }
+
   navigator.geolocation.getCurrentPosition(
     (position) => {
       console.log("Position:", position);
