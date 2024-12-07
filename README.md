@@ -58,12 +58,20 @@ To set up the project locally, follow these steps:
 ---
 
 ## Project Structure
-The project follows a simple structure with the following key files:
-
-- `index.html`: Main page for sharing a place.
-- `vister.html`: View shared places.
-- `styles.css`: Contains the styling for both pages.
-- `app.js`: JavaScript to handle geolocation and map updates.
+.vscode/          # VSCode settings
+src/
+  shareplace.js   # Handles sharing a place functionality
+  ui/
+    modal.js      # Manages modals
+  utility/
+    location.js   # Handles location-related utilities
+  Vister.js       # Handles viewing a shared place
+style/
+  shareplace.css  # Styling for the main app
+  vister.css      # Styling for viewing a place
+  modal.css       # Styling for modals
+index.html        # Main page for sharing a place
+vister.html       # Page for viewing shared places
 
 ---
 
