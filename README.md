@@ -76,6 +76,7 @@ vister.html       # Page for viewing shared places
 ---
 
 For those interested in enhancing My Place, you can fork the repository, work on your improvements in a new branch, and submit a pull request. Contributions are always appreciated, and adhering to project standards ensures a smooth integration process. Thank you for your support!
+
 ---
 
 ## License
