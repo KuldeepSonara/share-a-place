@@ -32,7 +32,7 @@ const locateUserHandler = () => {
     (error) => {
       console.error("Error while retrieving position:", error.message);
       showFallbackMessage(
-        "Could not retrieve your location. Please try again later."
+        "Location unavailable. Enable GPS or enter an address manually."
       );
     }
   );
