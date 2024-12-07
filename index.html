@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Share a Place</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.apple.com/v/maps/d/images/overview/intro_icon__dfyvjc1ohbcm_large.png"
+    />
+    <link rel="stylesheet" href="./dist/style/shareplase.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./dist/style/modal.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./src/utility/location.js" defer></script>
+    <script src="./src/ui/modal.js" defer></script>
+    <script src="./src/sharePlace.js" defer></script>
+  </head>
+  <body>
+    <template id="modal-template">
+      <div class="backdrop"></div>
+      <div class="modal"></div>
+    </template>
+    <template id="loading-modal-content">
+      <div class="modal">
+        <div class="modal__content centered">
+          <div class="lds-dual-ring"></div>
+        </div>
+      </div>
+    </template>
+
+    <header>
+      <h1>Share a Place!</h1>
+    </header>
+
+    <section id="selected-place">
+      <div id="map">
+        <p>
+          You haven't selected any place yet. Please enter an address or locate
+          yourself!
+        </p>
+      </div>
+    </section>
+
+    <section id="share-controls">
+      <input
+        id="share-link"
+        type="text"
+        readonly
+        value="Select a place to get a sharable link."
+      />
+      <button id="share-btn" disabled>Copy Link</button>
+    </section>
+
+    <section id="place-data">
+      <form>
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Enter address here..." />
+        <button type="submit">Find Place</button>
+      </form>
+      <button id="locate-btn">Get Current Location</button>
+    </section>
+  </body>
+</html>
