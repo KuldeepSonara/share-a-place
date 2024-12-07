@@ -75,34 +75,7 @@ vister.html       # Page for viewing shared places
 
 ---
 
-## Contributing
-
-We welcome contributions to **My Place**! Here's how you can help improve the project:
-
-1. Fork the repository: Create your own copy of the project.
-2. Create a new branch:
-
-    ```sh
-    git checkout -b feature-branch
-    ```
-
-3. Make changes: Add your feature or fix a bug.
-4. Commit your changes:
-
-    ```sh
-    git commit -m 'Add a new feature'
-    ```
-
-5. Push to your branch:
-
-    ```sh
-    git push origin feature-branch
-    ```
-
-6. Submit a Pull Request: Open a pull request to merge your changes into the main repository.
-
-Please ensure that your code follows the project's coding standards and is well-documented. Thank you for your contributions!
-
+For those interested in enhancing My Place, you can fork the repository, work on your improvements in a new branch, and submit a pull request. Contributions are always appreciated, and adhering to project standards ensures a smooth integration process. Thank you for your support!
 ---
 
 ## License
